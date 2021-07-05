@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rainbow</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,height=device-height" />
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .container {
+                height: 100px;
+                overflow: hidden;
+            }
+            .rainbow {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+                width: 200px;
+                height: 200px;
+                align-items: center;
+            }
+            .container span {
+                position: absolute;
+                display: inline-block;
+                /*border: 1px solid;*/
+                border-radius: 50%;
+                
+            }
+            #text {
+                font-family: Monospace;
+                font-weight: bold;
+                color: #009971;
+                font-size: 17px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="rainbow">
+                <span class="violet"></span>
+                <span class="indigo"></span>
+                <span class="blue"></span>
+                <span class="green"></span>
+                <span class="yellow"></span>
+                <span class="orange"></span>
+                <span class="red"></span>
+                <span class="white"></span>
+            </div>
+        </div>
+        <span id="text">Rainbow in CSS & JavaScript</span>
+        <script type="text/javascript" charset="utf-8">
+            const colours = document.querySelectorAll("span[class]")
+            colours.forEach((colour,i) => {
+                colour.style.background = colour.className
+                colour.style.height = 200-29*i+"px"
+                colour.style.width = 200-29*i+"px"
+            })
+        </script>
+    </body>
+</html>
